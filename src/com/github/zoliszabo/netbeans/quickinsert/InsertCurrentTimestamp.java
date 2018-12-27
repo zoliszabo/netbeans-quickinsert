@@ -7,10 +7,14 @@ package com.github.zoliszabo.netbeans.quickinsert;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.JTextComponent;
+import org.netbeans.api.editor.EditorRegistry;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
 import org.openide.awt.ActionRegistration;
+import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
 
 @ActionID(
@@ -31,6 +35,13 @@ public final class InsertCurrentTimestamp implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO implement action body
+        JTextComponent lastFocusedEditor = EditorRegistry.lastFocusedComponent();
+        if (lastFocusedEditor != null) {
+            try {
+                lastFocusedEditor.getDocument().insertString(lastFocusedEditor.getCaretPosition(), "ABCD", null);
+            } catch (BadLocationException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+        }
     }
 }
