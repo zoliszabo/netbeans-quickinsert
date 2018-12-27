@@ -56,7 +56,10 @@ public final class InsertCurrentTimestamp implements ActionListener {
         JTextComponent lastFocusedEditor = EditorRegistry.lastFocusedComponent();
         if (lastFocusedEditor != null) {
             try {
-                lastFocusedEditor.getDocument().insertString(lastFocusedEditor.getCaretPosition(), "ABCD", null);
+                lastFocusedEditor.getDocument().insertString(
+                        lastFocusedEditor.getCaretPosition(),
+                        String.valueOf(System.currentTimeMillis() / 1000L),
+                        null);
             } catch (BadLocationException ex) {
                 Exceptions.printStackTrace(ex);
             }
