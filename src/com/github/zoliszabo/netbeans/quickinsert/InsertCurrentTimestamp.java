@@ -46,7 +46,7 @@ import org.openide.util.NbBundle.Messages;
 )
 @ActionReferences({
     @ActionReference(path = "Menu/Source", position = 9100, separatorBefore = 9050, separatorAfter = 9150),
-    @ActionReference(path = "Shortcuts", name = "DS-U")
+    @ActionReference(path = "Shortcuts", name = "DS-Q U")
 })
 @Messages("CTL_InsertCurrentTimestamp=Insert Current (UNIX) Timestamp")
 public final class InsertCurrentTimestamp implements ActionListener {
