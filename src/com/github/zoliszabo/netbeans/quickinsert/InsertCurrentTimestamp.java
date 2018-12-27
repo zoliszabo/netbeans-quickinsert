@@ -19,7 +19,8 @@ import org.openide.util.NbBundle.Messages;
 )
 @ActionRegistration(
         iconBase = "com/github/zoliszabo/netbeans/quickinsert/assets/time-16x16.png",
-        displayName = "#CTL_InsertCurrentTimestamp"
+        displayName = "#CTL_InsertCurrentTimestamp",
+        iconInMenu = false
 )
 @ActionReferences({
     @ActionReference(path = "Menu/Source", position = 9100, separatorBefore = 9050, separatorAfter = 9150),
